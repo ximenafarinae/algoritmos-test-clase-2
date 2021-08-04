@@ -1,7 +1,7 @@
 package com.redbeeacademy.algoritmostest.Lista;
 
-import com.redbeeacademy.algoritmostest.Lista.Cine;
-import com.redbeeacademy.algoritmostest.Lista.Persona;
+import com.redbeeacademy.algoritmostest.Lista.EjercicioCine.Cine;
+import com.redbeeacademy.algoritmostest.Lista.EjercicioCine.Persona;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
