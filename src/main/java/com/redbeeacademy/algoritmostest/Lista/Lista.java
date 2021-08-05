@@ -10,20 +10,31 @@ Realizar los siguientes métodos:
  */
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 public class Lista {
 
     public static List<Integer> guardarEnLista(Integer numero) {
         List<Integer> listaNumeros = new ArrayList<>();
-        listaNumeros.add(numero);
+        if (numero != null) {
+            listaNumeros.add(numero);
+        } else {
+            listaNumeros.add(0);
+        }
         return listaNumeros;
     }
 
     public static List<Integer> intercambiar(List<Integer> lista) {
         Integer tercerElemento = lista.get(2);
         Integer quintoElemento = lista.get(4);
-        List<Integer> listaNueva = new ArrayList<>(lista);
+        List<Integer> listaNueva = new ArrayList<>();
+        for (int i = 0; i < lista.size(); i++) {
+            if(lista.get(i) != null){
+                listaNueva.add(lista.get(i));
+            }
+        }
         listaNueva.remove(2);
         listaNueva.add(2, quintoElemento);
         listaNueva.remove(4);
@@ -34,16 +45,25 @@ public class Lista {
 
     public static List<Integer> agregarElementoAlInicio(List<Integer> lista, Integer numero) {
         List<Integer> listaNueva = new ArrayList<>(lista);
-        listaNueva.add(0, numero);
+        if (numero != null) {
+            listaNueva.add(0, numero);
+        }
+
         return listaNueva;
     }
 
     public static Double promedioLista(List<Integer> lista) {
         Double suma = 0.0;
+        Integer elementoVacio = 0;
         for (Integer elemento : lista) {
-            suma+=elemento;
+            if (elemento != null) {
+                suma += elemento;
+            } else {
+                elementoVacio++;
+            }
+
         }
-        return suma/lista.size();
+        return suma / (lista.size() - elementoVacio);
     }
 
     public static List<Integer> eliminarMaximo(List<Integer> lista) {

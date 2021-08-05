@@ -38,7 +38,7 @@ class ListaTest {
     @Test
     @DisplayName("Test when null values are sent add first")
     public void testNullValuesSwap() {
-        List<Integer> result = Lista.intercambiar(List.of(1, 5, 6, 7, null, 2));
+        List<Integer> result = Lista.intercambiar(Arrays.asList(1, 5, 6, 7, null, 2));
         assertNotNull(result, "The result cannot be null");
         assertEquals(List.of(1, 5, 2, 7, 6), result);
     }

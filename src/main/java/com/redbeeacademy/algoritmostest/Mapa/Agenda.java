@@ -19,28 +19,30 @@ implementación de tablas hash con un string (nombre) de clave y un entero (tele
  */
 public class Agenda {
 
-    private static HashMap<String,Integer> miAgenda=
+    private static HashMap<String, Integer> miAgenda =
             new HashMap<>();
 
-    public static void nuevoContacto(String nombre, int telefono){
-        //TODO -> implement me
+    public static void nuevoContacto(String nombre, int telefono) {
+        miAgenda.put(nombre, telefono);
     }
 
-    public static void modificarTelefono(String nombre, int telefono){
-        //TODO -> implement me
+    public static void modificarTelefono(String nombre, int telefono) {
+        miAgenda.put(nombre, telefono);
     }
 
-    public static Integer obtenerTelefono(String nombre){
-        //TODO -> implement me
-        return null;
+    public static Integer obtenerTelefono(String nombre) {
+        return miAgenda.get(nombre);
     }
 
-    public static boolean eliminarTelefono(String nombre){
-        //TODO -> implement me
-        return false;
+    public static boolean eliminarTelefono(String nombre) {
+        Boolean eliminado = false;
+        if (miAgenda.get(nombre) != null) {
+            miAgenda.remove(nombre);
+            eliminado = true;
+        }
+        return eliminado;
     }
-
-    protected static List<Integer> miAgenda(){
+    protected static List<Integer> miAgenda() {
         return miAgenda.values().stream().collect(Collectors.toList());
     }
 

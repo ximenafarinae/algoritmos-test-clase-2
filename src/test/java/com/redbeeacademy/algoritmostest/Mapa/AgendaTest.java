@@ -2,12 +2,13 @@ package com.redbeeacademy.algoritmostest.Mapa;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 
-class AgendaTest extends Agenda{
+class AgendaTest extends Agenda {
 
     @Test
     @DisplayName("Tests happy path add")
@@ -49,7 +50,6 @@ class AgendaTest extends Agenda{
     public void testHappyPathEliminatedFalse() {
         Agenda.nuevoContacto("Laura", 1131391999);
         Boolean eliminado = Agenda.eliminarTelefono("Barbara");
-
         assertFalse(eliminado);
     }
 
@@ -58,7 +58,6 @@ class AgendaTest extends Agenda{
     public void testHappyPathCollectionOfTelephones() {
         Agenda.nuevoContacto("Laura", 1131391999);
         List<Integer> listaTelefonos = Agenda.miAgenda();
-
         assertTrue(listaTelefonos.contains(1131391999));
     }
 

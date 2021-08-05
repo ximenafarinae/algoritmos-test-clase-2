@@ -21,34 +21,55 @@ Tenemos la clase Persona, donde vamos a usarla para modelar edad, y las propieda
  */
 
 
-
 public class Cine {
 
-    public static double cantidadTotalRecaudada(List<Persona> personas){
+    public static double cantidadTotalRecaudada(List<Persona> personas) {
         double cantidadTotal = 0;
 
-        for(Persona p: personas) {
-            if(p.getEdad() >= 5 && p.getEdad() <= 10) {
-                cantidadTotal += 100;
-            } else if(p.getEdad() >= 11 && p.getEdad() <= 17) {
-                cantidadTotal += 150;
-            } else {
-                cantidadTotal += 200;
+        for (Persona p : personas) {
+            if (p != null) {
+                if (p.getEdad() >= 5 && p.getEdad() <= 10) {
+                    cantidadTotal += 100;
+                } else if (p.getEdad() >= 11 && p.getEdad() <= 17) {
+                    cantidadTotal += 150;
+                } else {
+                    cantidadTotal += 200;
+                }
             }
+
         }
 
         return cantidadTotal;
     }
 
-    public static Integer cantidadPersonas(List<Persona> personas){
-        Integer cantidadPersonas = 0;
-        //TODO -> implement me
+    public static Integer cantidadPersonas(List<Persona> personas) {
+        Integer cantidadPersonas = 0, cantidadMenores = 0, cantidadMayores = 0;
+        for (Persona p : personas) {
+            if (p != null) {
+                if (p.getEdad() >= 5 && p.getEdad() <= 10) {
+                    cantidadMenores++;
+                } else if (p.getEdad() >= 11 && p.getEdad() <= 17) {
+                    cantidadMayores++;
+                } else {
+                    cantidadPersonas++;
+                }
+            }
+        }
+        cantidadPersonas = cantidadPersonas + cantidadMenores + cantidadMayores;
         return cantidadPersonas;
     }
 
-    public static double promedioEdad(List<Persona> personas){
+    public static double promedioEdad(List<Persona> personas) {
         double promedio = 0;
-        //TODO -> implement me
+        Integer elementosVacios = 0;
+        for (Persona p : personas) {
+            if (p != null) {
+                promedio += p.getEdad();
+            } else {
+                elementosVacios++;
+            }
+        }
+        promedio = promedio / (personas.size() - elementosVacios);
         return promedio;
     }
 }
