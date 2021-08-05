@@ -9,36 +9,49 @@ Realizar los siguientes métodos:
 6) Dadas dos listas, crear una nueva con los elementos que se repitan en ambas
  */
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Lista {
 
-    public static List<Integer> guardarEnLista(Integer numero){
+    public static List<Integer> guardarEnLista(Integer numero) {
+        List<Integer> listaNumeros = new ArrayList<>();
+        listaNumeros.add(numero);
+        return listaNumeros;
+    }
+
+    public static List<Integer> intercambiar(List<Integer> lista) {
+        Integer tercerElemento = lista.get(2);
+        Integer quintoElemento = lista.get(4);
+        List<Integer> listaNueva = new ArrayList<>(lista);
+        listaNueva.remove(2);
+        listaNueva.add(2, quintoElemento);
+        listaNueva.remove(4);
+        listaNueva.add(4, tercerElemento);
+        return listaNueva;
+
+    }
+
+    public static List<Integer> agregarElementoAlInicio(List<Integer> lista, Integer numero) {
+        List<Integer> listaNueva = new ArrayList<>(lista);
+        listaNueva.add(0, numero);
+        return listaNueva;
+    }
+
+    public static Double promedioLista(List<Integer> lista) {
+        Double suma = 0.0;
+        for (Integer elemento : lista) {
+            suma+=elemento;
+        }
+        return suma/lista.size();
+    }
+
+    public static List<Integer> eliminarMaximo(List<Integer> lista) {
         //TODO -> implement me
         return null;
     }
 
-    public static List<Integer> intercambiar(List<Integer> lista){
-        //TODO -> implement me
-        return null;
-    }
-
-    public static List<Integer> agregarElementoAlInicio(List<Integer> lista, Integer numero){
-        //TODO -> implement me
-        return null;
-    }
-
-    public static Double promedioLista(List<Integer> lista){
-        //TODO -> implement me
-        return null;
-    }
-
-    public static List<Integer> eliminarMaximo(List<Integer> lista){
-        //TODO -> implement me
-        return null;
-    }
-
-    public static List<Integer> repetidos(List<Integer> a, List<Integer> b){
+    public static List<Integer> repetidos(List<Integer> a, List<Integer> b) {
         //TODO -> implement me
         return null;
     }

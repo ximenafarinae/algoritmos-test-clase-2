@@ -26,7 +26,17 @@ public class Cine {
 
     public static double cantidadTotalRecaudada(List<Persona> personas){
         double cantidadTotal = 0;
-        //TODO -> implement me
+
+        for(Persona p: personas) {
+            if(p.getEdad() >= 5 && p.getEdad() <= 10) {
+                cantidadTotal += 100;
+            } else if(p.getEdad() >= 11 && p.getEdad() <= 17) {
+                cantidadTotal += 150;
+            } else {
+                cantidadTotal += 200;
+            }
+        }
+
         return cantidadTotal;
     }
 
