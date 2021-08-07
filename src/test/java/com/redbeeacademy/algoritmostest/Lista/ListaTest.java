@@ -88,7 +88,7 @@ class ListaTest {
     public void testNullValuesRemovedMax() {
         List<Integer> result = Lista.eliminarMaximo(Arrays.asList(1, 5, 6, null, 8, 2));
         assertNotNull(result, "The result cannot be null");
-        assertEquals(List.of(1, 5, 6, 2), result);
+        assertEquals(Arrays.asList(1, 5, 6, 2), result);
     }
 
 

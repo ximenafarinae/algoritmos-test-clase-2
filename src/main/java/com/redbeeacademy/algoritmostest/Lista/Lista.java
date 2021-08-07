@@ -31,7 +31,7 @@ public class Lista {
         Integer quintoElemento = lista.get(4);
         List<Integer> listaNueva = new ArrayList<>();
         for (int i = 0; i < lista.size(); i++) {
-            if(lista.get(i) != null){
+            if (lista.get(i) != null) {
                 listaNueva.add(lista.get(i));
             }
         }
@@ -67,13 +67,32 @@ public class Lista {
     }
 
     public static List<Integer> eliminarMaximo(List<Integer> lista) {
-        //TODO -> implement me
-        return null;
+        Integer max = 0;
+        List<Integer> listaNueva = sinNulls(lista);
+        for (int i = 0; i < listaNueva.size(); i++) {
+            if (listaNueva.get(i) > max) {
+                max = listaNueva.get(i);
+            }
+        }
+        listaNueva.remove(max);
+        return listaNueva;
     }
 
     public static List<Integer> repetidos(List<Integer> a, List<Integer> b) {
-        //TODO -> implement me
-        return null;
+        List<Integer> nuevaLista = new ArrayList<>();
+        for (int i = 0; i < a.size(); i++) {
+            for (int j = 0; j < b.size(); j++) {
+                if (a.get(i) == b.get(j)) {
+                    nuevaLista.add(a.get(i));
+                }
+            }
+        }
+        return nuevaLista;
+    }
+    private static List sinNulls(List lista){
+        List listaNueva=new ArrayList(lista);
+        while (listaNueva.remove(null));
+        return listaNueva;
     }
 
 }
